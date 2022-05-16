@@ -1,0 +1,2 @@
+Publish this with "sbt publishLocal" to be able to use it in your
+local projects.
