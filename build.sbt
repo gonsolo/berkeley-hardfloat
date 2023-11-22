@@ -6,10 +6,8 @@ name := "hardfloat"
 
 scalaVersion := "2.13.10"
 
-resolvers ++= Seq(
-  Resolver.sonatypeRepo("snapshots"),
-  Resolver.sonatypeRepo("releases")
-)
+resolvers ++= Resolver.sonatypeOssRepos("snapshots")
+resolvers ++= Resolver.sonatypeOssRepos("releases")
 
 Compile / scalaSource := baseDirectory.value / "hardfloat/src/main/scala"
 Test / scalaSource := baseDirectory.value / "hardfloat/tests/src"
@@ -22,7 +20,7 @@ libraryDependencies += "org.scala-lang.modules" %% "scala-parallel-collections" 
 Test / testForkedParallel := true
 
 publishMavenStyle := true
-publishArtifact in Test := false
+Test / publishArtifact := false
 pomIncludeRepository := { x => false }
 // Don't add 'scm' elements if we have a git.remoteRepo definition,
 //  but since we don't (with the removal of ghpages), add them in below.
