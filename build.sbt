@@ -1,6 +1,6 @@
 organization := "edu.berkeley.cs"
 
-version := "1.5-SNAPSHOT"
+version := "1.5-GONSOLO-SNAPSHOT"
 
 name := "hardfloat"
 
